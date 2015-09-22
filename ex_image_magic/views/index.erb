@@ -1,0 +1,13 @@
+
+		<h1>Gallery Page</h1>
+
+		<form method="get" action="/upload">
+		    <button type="submit">Upload Image</button>
+		</form>
+
+		<div id="gallery">
+			<% @file_names.each do |file_name| %>
+				<a href="/images/<%= file_name %>"><img src="/thumbnails/<%= file_name %>" alt="<%= file_name %>" /></a>
+			<% end %>
+		</div>
+

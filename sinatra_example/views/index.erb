@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Sinatra Session Demo</title>
+  </head>
+  <body>
+    <h4>Holy Cats Batman, a real site</h4>
+    <% if session[:requesting_site] %> 
+      <p>You have this session: <%= session.inspect %></p>
+      <a href="/reset">Please reset</a> 
+    <% else %>
+      <p>To activate your session:</p>
+      <a href="/authorize">Click here</a> 
+    <% end %>
+  </body>
+</html>

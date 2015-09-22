@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+		<title>IMDB Movie Trivia</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheet.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-header">
+			<h1>IMDB Movie Trivia</h1>
+			</div>
+
+			<div id="contents">
+				<div class="introduction">
+					<h4>Welcome to IMDB Movie Trivia!</h4>
+					<p>This was created as a small ruby excercise using the <a href="https://github.com/ariejan/imdb">imdb ruby gem</a>. Find movies that match with your search word and play some trivia by guessing which of the movies is made in the year X and stars Y as the main cast. No set of movies will contain the same production year or the same cast. Enjoy!</p>
+				</div>
+
+				<form class="form-horizontal" id="searchword" action="/load_movies" method="post" />
+					<legend>Search movies by word</legend>
+
+					<div class="col-lg-10">
+				        <input type="text" name="search_query" class="form-control" placeholder="Enter word">
+				        <button id="searchbutton" type="submit" class="btn btn-primary">SEARCH</button>
+				    </div>
+				</form>
+
+				<form class="form-horizontal" id="searchrandom" action="/load_movies_from_dictionary" method="post" />
+					<legend>Search with random word</legend>
+
+					<div class="col-lg-10">
+				        <button id="searchbutton" type="submit" class="btn btn-primary">SEARCH RANDOM</button>
+				    </div>
+				</form>
+			</div>
+
+		</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+		$("#searchword").on('click', function(){
+			if $("searchword").val().length === 0){
+			$("searchword").text('enter a word!')
+			}
+		})
+
+	</script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

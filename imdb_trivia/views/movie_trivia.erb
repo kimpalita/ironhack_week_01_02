@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IMDB Movie Trivia</title>
+	<link rel="stylesheet" type="text/css" href="/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheet.css" />
+</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>IMDB Movie Trivia</h1>
+			</div>
+
+			<form class="form-horizontal" action="/" method="get" />
+					<div class="col-lg-10">
+				        <button type="submit" class="btn btn-primary">NEW SEARCH</button>
+				    </div>
+			</form>
+
+			<div class="introduction">
+				<h4>Movies containing the word: "<%= @word %>"</h4>
+
+				<% if @my_movies_array.size < 9 %>
+					<p>There are only a limited number of movies containing the word: "<%= @word %>". Try another.</p>
+				<% else %>
+					<p>Which of the following movies were filmed in the year <%= @random_movie[:year] %> and stars <%= @random_movie[:cast]%>?</p>
+			</div>
+
+			<div class="posterimages">
+				<% @my_movies_array.each do |movie| %>
+					<% if movie[:year] == @random_movie[:year] %>
+						<a href="#"><img id="correctanswer" src="<%= movie[:poster] %>" onclick="alert('CORRECT!')"></a>
+						<% else %>
+						<img src="<%= movie[:poster] %>" onclick="alert('Guess again.')">
+					<% end %>
+				<% end %>
+			<% end %>
+			</div>
+			
+		</div>
+
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	</body>
+</html>
+
+
+

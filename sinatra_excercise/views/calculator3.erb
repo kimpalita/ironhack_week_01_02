@@ -1,0 +1,16 @@
+<form action="/store" method="POST">
+	<input type="text" name="new_number" />
+	<input type="submit" name="calculate_button" value="add" />
+	<input type="submit" name="calculate_button" value="subtract" />
+	<input type="submit" name="calculate_button" value="multiply" />
+	<input type="submit" name="calculate_button" value="divide" />
+</form>
+
+<h3>Stored value = <%= @saved_number %></h3>
+<h3>Second value = <%= @new_number %></h3>
+<h3>Operation: <%= @operation %></h3>
+<h3>Result = <%= @total %></h3>
+
+<form action="/clear" method="GET">
+	<input type="submit" name="clear" value="CLEAR" />
+</form>

@@ -1,0 +1,37 @@
+<form action="/calculate" method="POST">
+	<input type="text" name="first_number" />
+	<input type="text" name="second_number" />
+	<input type="submit" name="calculate_button" value="add" />
+	<input type="submit" name="calculate_button" value="subtract" />
+	<input type="submit" name="calculate_button" value="multiply" />
+	<input type="submit" name="calculate_button" value="divide" />
+</form>
+
+<h3>First number = <%= @first_number %></h3>
+<h3>Second number = <%= @second_number %></h3>
+<h3>Operation: <%= @operation %></h3>
+<h3>Result = <%= @total %></h3>
+
+<form action="/clear" method="GET">
+	<input type="submit" name="clear" value="CLEAR" />
+</form>
+
+<!--
+<form action="/subtract" method="POST">
+	<input type="text" name="first_number" />
+	<input type="text" name="second_number" />
+	<input type="submit" value="subtract" />
+</form>
+
+<form action="/multiply" method="POST">
+	<input type="text" name="first_number" />
+	<input type="text" name="second_number" />
+	<input type="submit" value="multiply" />
+</form>
+
+<form action="/divide" method="POST">
+	<input type="text" name="first_number" />
+	<input type="text" name="second_number" />
+	<input type="submit" value="divide" />
+</form>
+-->

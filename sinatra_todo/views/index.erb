@@ -1,0 +1,37 @@
+<h1>Shit to get done</h1>
+
+<form action="/sort_by/priority" method="post">
+	<input type="submit" value="Sort by priority" />
+</form>
+
+<form action="/sort_by/date" method="post">
+	<input type="submit" value="Sort by date" />
+</form>
+
+<div>
+<ol>
+<% @all_tasks.each_with_index do |task, index| %>
+<li><% if task[:task_priority] == 2 %>URGENT: <% end %>
+	<%= task[:task_name] %> (added on: <%= task[:task_date].strftime("%Y-%m-%d") %>)
+	<% if task[:task_done] == true %>
+		--Done! <a href="/delete/<%= index %>">Delete</a>
+		<% else %>
+			<a href="/done/<%= index %>">Mark done</a>
+	<% end %>
+<% end %>	
+</ol>	
+</div>
+
+<form action="/save_tasks" method="get">
+	<input type="submit" value="Save tasks" />
+</form>
+
+<form action="/load_saved_tasks" method="get">
+	<input type="submit" value="Load saved tasks" />
+</form>
+
+<h2>Add more shit</h2>
+<form action="/add_todo" method="POST">
+	<input type="text" name="task" />
+	<input type="submit" value="Add Task" />
+</form>
